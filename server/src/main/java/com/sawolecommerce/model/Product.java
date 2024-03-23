@@ -1,4 +1,4 @@
-package com.sawolecommerce.ecommerce;
+package com.sawolecommerce.model;
 
 // Information on how to use database in spring boot: https://spring.io/guides/gs/accessing-data-mysql
 
