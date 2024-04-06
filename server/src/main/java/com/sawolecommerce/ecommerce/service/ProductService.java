@@ -1,11 +1,11 @@
 /* The point of the service layer is to hold the business logic of the application. It calls methods from the repository layer to interact with the database. Here is where you would handle things like transactions and security */
-package com.sawolecommerce.service;
+package com.sawolecommerce.ecommerce.service;
 //import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.sawolecommerce.repo.ProductRepo;
-import com.sawolecommerce.model.Product;
-import com.sawolecommerce.exception.ProductNotFoundException;
+import com.sawolecommerce.ecommerce.repo.ProductRepo;
+import com.sawolecommerce.ecommerce.model.Product;
+import com.sawolecommerce.ecommerce.exception.ProductNotFoundException;
 import java.util.List;
 
 @Service // This tells Spring that this class is a service which in simple terms is a class that contains business logic. Business logic is the part of the program that encodes the real-world business rules that determine how data can be created, stored, and changed.

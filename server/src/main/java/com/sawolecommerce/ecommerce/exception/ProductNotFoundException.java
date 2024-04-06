@@ -1,4 +1,4 @@
-package com.sawolecommerce.exception;
+package com.sawolecommerce.ecommerce.exception;
 
 public class ProductNotFoundException extends RuntimeException{
     public ProductNotFoundException(String message){
