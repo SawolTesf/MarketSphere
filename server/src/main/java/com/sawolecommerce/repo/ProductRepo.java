@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.sawolecommerce.model.Product;
 // This interface extends JpaRepository which is a JPA specific extension of Repository. It contains the full API of CrudRepository and PagingAndSortingRepository so that you dont have to write the methods yourself.
-public interface ProductRepo extends JpaRepository<Product, String> {
+public interface ProductRepo extends JpaRepository<Product, Long> {
 
 }
