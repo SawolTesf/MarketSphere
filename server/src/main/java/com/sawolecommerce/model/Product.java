@@ -14,6 +14,7 @@ public class Product implements java.io.Serializable{ // Serializable is used to
 
     @Id // This tells Hibernate to make a column in the table as the primary key
     @GeneratedValue(strategy=GenerationType.AUTO) // This tells Hibernate to generate the value automatically
+    private Long productId;
     private String name;
     private String description;
     private double price;
@@ -21,7 +22,8 @@ public class Product implements java.io.Serializable{ // Serializable is used to
     private String imageUrl;
 
     // Overloaded constructor
-    public Product(String name, String description, double price, String category, String imageUrl) {
+    public Product(String name, String description, double price, String category, String imageUrl, Long productId) {
+        this.productId = productId;
         this.name = name;
         this.description = description;
         this.price = price;
@@ -30,6 +32,11 @@ public class Product implements java.io.Serializable{ // Serializable is used to
     }
 
     // Getters
+
+    public Long getProductId() {
+        return productId;
+    }
+
     public String getName() {
         return name;
     }
@@ -71,7 +78,8 @@ public class Product implements java.io.Serializable{ // Serializable is used to
     @Override
     public String toString() {
       return "Product{" +
-              "name='" + name + '\'' +
+              "productId=" + productId +
+              ", name='" + name + '\'' +
               ", description='" + description + '\'' +
               ", price=" + price +
               ", category='" + category + '\'' +
