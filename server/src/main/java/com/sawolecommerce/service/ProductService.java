@@ -1,3 +1,5 @@
+/* The point of the service layer is to hold the business logic of the application. It calls methods from the repository layer to interact with the database. Here is where you would handle things like transactions and security */
+
 package com.sawolecommerce.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
