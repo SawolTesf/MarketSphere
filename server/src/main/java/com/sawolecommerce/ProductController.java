@@ -4,13 +4,14 @@ package com.sawolecommerce;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.sawolecommerce.service.ProductService;
+import com.sawolecommerce.ecommerce.service.ProductService;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import com.sawolecommerce.model.Product;
+import com.sawolecommerce.ecommerce.model.Product;
 import java.util.List;
 
 @RestController // This tells Spring that this class is a controller
@@ -25,7 +26,8 @@ public class ProductController {
   // Methods
   @GetMapping
   public ResponseEntity<List<Product>> getAllProducts(){
-    return ResponseEntity.ok(productService.findAllProducts());
+    List<Product> products = productService.findAllProducts();
+    return new ResponseEntity<>(products, HttpStatus.OK);
   }
   
 }
