@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 import com.sawolecommerce.ecommerce.model.Product;
@@ -52,6 +54,19 @@ public class ProductController {
     return new ResponseEntity<>(newProduct, HttpStatus.OK);
 
   }
-  
 
+  // update products
+  @PutMapping("/update") // Since we are updating, we are using PutMapping instead of PostMapping
+  public ResponseEntity<Product> updateProduct(@RequestBody Product product) {
+    Product updatedProduct = productService.addProduct(product);
+    return new ResponseEntity<>(updatedProduct, HttpStatus.OK);
+
+  }
+
+  // Delete products
+  @DeleteMapping("/delete/{id}")
+  public ResponseEntity<?> deleteProduct(@PathVariable("id") Long id) {
+    productService.deleteProduct(id);
+    return new ResponseEntity<>(HttpStatus.OK);
+  }
 }
