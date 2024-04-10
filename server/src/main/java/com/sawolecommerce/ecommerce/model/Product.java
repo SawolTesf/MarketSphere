@@ -1,5 +1,7 @@
 package com.sawolecommerce.ecommerce.model;
 
+import jakarta.persistence.Column;
+
 // Information on how to use database in spring boot: https://spring.io/guides/gs/accessing-data-mysql
 
 // Importing the necessary libraries
@@ -14,12 +16,17 @@ public class Product implements java.io.Serializable{ // Serializable is used to
 
     @Id // This tells Hibernate to make a column in the table as the primary key
     @GeneratedValue(strategy=GenerationType.AUTO) // This tells Hibernate to generate the value automatically
+    @Column(nullable = false, updatable = false) // This tells that the column of the table cannot be null and cannot be updated. This column is for the product id
     private Long productId;
     private String name;
     private String description;
     private double price;
     private String category;
     private String imageUrl;
+
+    // Default constructor
+    public Product() {
+    }
 
     // Overloaded constructor
     public Product(String name, String description, double price, String category, String imageUrl, Long productId) {
