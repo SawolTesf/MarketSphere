@@ -1,6 +1,6 @@
 /* This is going to be our controller class. The controller class is responsible for handling incoming HTTP requests and sending responses back to the client. It is the entry point of the application. */
 
-package com.sawolecommerce;
+package com.sawolecommerce.ecommerce;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -34,7 +34,7 @@ public class ProductController {
 
   // Get products
 
-  @GetMapping("all") // Returns all product
+  @GetMapping("/all") // Returns all product
   public ResponseEntity<List<Product>> getAllProducts(){
     List<Product> products = productService.findAllProducts();
     return new ResponseEntity<>(products, HttpStatus.OK);
