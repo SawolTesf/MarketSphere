@@ -22,7 +22,11 @@ export class ProductService{
   }
 
   public updateProduct(product: Product): Observable<Product>{
-    return this.http.post<Product>(`${this.apiServerUrl}/product/update`, product);
+    return this.http.put<Product>(`${this.apiServerUrl}/product/update`, product);
+  }
+
+  public deleteProduct(productId: number): Observable<void>{
+    return this.http.delete<void>(`${this.apiServerUrl}/product/delete/${productId}`);
   }
 
 }
