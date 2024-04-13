@@ -13,8 +13,12 @@ export class ProductService{
   constructor(private http: HttpClient){} // Injecting the HttpClient service into the ProductService class.
 
   // This method will make an HTTP GET request to the backend server to retrieve all the products.
-  public getEmployees(): Observable<Product[]>{
+  public getProduct(): Observable<Product[]>{
     return this.http.get<Product[]>(`${this.apiServerUrl}/product/all`);
+  }
+
+  public addProduct(product: Product): Observable<Product>{
+    return this.http.post<Product>(`${this.apiServerUrl}/product/add`, product);
   }
 
 }
