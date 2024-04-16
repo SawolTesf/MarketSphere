@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable } from 'rxjs'; // rxjs is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code.
 import { Product } from './product';
 
 // This means that the service will be provided in the root module, which is the AppModule. 
