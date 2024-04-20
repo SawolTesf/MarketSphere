@@ -9,7 +9,7 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class ProductService{
-  private apiServerUrl = environment.apiUrl; // This is blank because we are using a proxy to connect to the backend server. A proxy is what sits between the client and the server which is used to forward requests to the server.
+  private apiServerUrl = environment.apiUrl; // This variable will hold the URL of the backend server.
 
   constructor(private http: HttpClient){} // Injecting the HttpClient service into the ProductService class.
 
