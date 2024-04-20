@@ -2,10 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from './product';
 import { ProductService } from './product.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import {CommonModule} from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
+  imports: [CommonModule],
+  template: `<div *ngIf="visible">Hi</div>`, // Copied from https://angular.io/extended-diagnostics/NG8103
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
