@@ -1,9 +1,27 @@
-<div *ngFor="let product of products">
-  <div class="card">
-    <div class="card-body">
-      <h5 class="card-title">{{ product.name }}</h5>
-      <p class="card-text">{{ product.description }}</p>
-      <p class="card-text">{{ product.price }}</p>
-      <img src = "{{ product.imageUrl }}" alt = "product image" width="100" height="100">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Product Page</title>
+  <link rel="stylesheet" href="app.component.css">
+</head>
+
+<body>
+  <h1>Products</h1>
+  <div class="container">
+    <div *ngFor="let product of products" class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{ product.name }}</h5>
+        <p class="card-text">${{ product.price }}</p>
+        <img src = "{{ product.imageUrl }}" alt = "product image" width="100" height="100">
+        <!--<p class="card-text">{{ product.description }}</p>-->
+        <div class ="button-container">
+          <button class="Edit-button">Edit</button>
+          <button class="Delete-button">Delete</button>
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</body>
+
+</html>
